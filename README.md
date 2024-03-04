@@ -26,19 +26,20 @@ The application works as follows:
 Create a `.env` file and define the following variables:
 
 ```dotenv
-# API SETTINGS
 API_ENDPOINT = "https://api.novelai.net/"
 API_KEY = "your-key-here"
 
-model = "kayra-v1"
-temperature = 0.9 
-min_length = 10   
-max_length = 100  
+# API SETTINGS
+model = "kayra-v1"                              # kayra-v1 default model, used to generate text
+temperature = 0.5                               # 0.9 default temperature, 0.0-1.0, 0.0 is deterministic, 1.0 is random
+min_length = 10                                 # 10 default minimum length, used to prevent the model from returning very short outputs
+max_length = 100                                # 100 default maximum length, used to prevent the model from returning very long outputs
 
 # APP SETTINGS
-max_context_size = 8192               
-context_file_name = "context.txt"     
-use_persistent_context = True
+max_context_size = 8192                         # 8192 maximum context size allowed by the API
+context_file_name = "context.txt"               # context.txt default context file name, used to store the context between requests
+use_persistent_context = True                   # True to keep the context persistent between requests, False to reset the context after each request
+context_base_file_name = "context_base.txt"     # context_base.txt default context base file name, used to store the base context
 ```
 
 ## Usage
