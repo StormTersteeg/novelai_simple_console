@@ -3,7 +3,7 @@ context_base = ""
 
 def get_context(context_file):
     try:
-        with open(context_file, "r") as f:
+        with open("context/" + context_file, "r") as f:
             return f.read()
     except FileNotFoundError:
         return ""
@@ -11,7 +11,7 @@ def get_context(context_file):
 def save_context(context_file):
     global context
 
-    with open(context_file, "w") as f:
+    with open("context/" + context_file, "w") as f:
         f.write(context)
 
 def add_to_context(prompt, max_context_size):

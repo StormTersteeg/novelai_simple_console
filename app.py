@@ -2,8 +2,8 @@ import os
 from dotenv import load_dotenv
 
 # local imports
-from context_handling import *
-from api_handling import *
+from handlers.context_handling import *
+from handlers.api_handling import *
 
 # Check the operating system for cross-platform title setting
 if os.name == 'nt':  # Check if it's Windows
