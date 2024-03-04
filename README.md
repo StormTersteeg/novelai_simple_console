@@ -51,10 +51,11 @@ If you want to completely reset the direction of your last generated story, simp
 The application works as follows:
 - It loads environment variables from the .env file.
 - The user provides input prompts which are used to generate text.
-- The context (user prompts) is stored and can be optionally persisted between requests.
-- The generated text is displayed to the user.
+- The context (user prompts) is stored and can be optionally persisted between sessions.
+- The generated text is displayed to the user and saved to the context file.
 
 ### Additional Notes
+
 - The use_persistent_context variable determines whether the context is saved between "sessions".
 - max_context_size limits the size of the context stored (and sent to the API)
 - The api_handling.py module handles API requests to NovelAI's service.
