@@ -1,6 +1,7 @@
 context = ""
+context_base = ""
 
-def load_context(context_file):
+def get_context(context_file):
     try:
         with open(context_file, "r") as f:
             return f.read()

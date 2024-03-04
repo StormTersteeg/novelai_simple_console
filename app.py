@@ -23,10 +23,16 @@ max_length = int(os.getenv('max_length', 150))
 max_context_size = int(os.getenv('max_context_size', 8192))
 use_persistent_context = os.getenv('use_persistent_context', "false").lower() == "true"
 context_file = os.getenv('context_file', "context.txt")
+context_base_file = os.getenv('context_base_file', "context_base.txt")
 
 # Load context from file
 if use_persistent_context:
-    context = load_context(context_file)
+    context = get_context(context_file)
+context_base = get_context(context_base_file)
+
+# Subtract context_base.length from max_context_size to ensure that the context is not longer than max_context_size
+max_context_size -= len(context_base)
+
 print()
 
 while True:
@@ -39,7 +45,8 @@ while True:
     # Generate output
     output = ""
     while output == "":
-        output = generate_output(API_KEY, API_ENDPOINT, model, temperature, min_length, max_length, context)
+        full_context = context_base + "\n" + context
+        output = generate_output(API_KEY, API_ENDPOINT, model, temperature, min_length, max_length, full_context)
     add_to_context(output, max_context_size)
     if use_persistent_context:
         save_context(context_file)
