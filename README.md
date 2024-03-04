@@ -44,8 +44,10 @@ context_base_file_name = "context_base.txt"     # context_base.txt default conte
 
 ## Usage
 
-Run the app.py script. The console will prompt for input. Enter your prompt and press Enter. The application will generate text based on the prompt using NovelAI's API and display the output.
-Change the context_base.txt to your liking, this file is used to give the beginning of your next story a starting point. Using the context_base.txt will massively improve the quality of the generated output.
+Run the app.py script. The console will prompt for input. Enter your prompt and press Enter.<br>
+The application will generate text based on the prompt using NovelAI's API and display the output.<br>
+
+Change the context_base.txt to your liking, this file is used to give the beginning of your next story a starting point. Using the context_base.txt will massively improve the quality of the generated output.<br>
 If you want to completely reset the direction of your last generated story, simply erase the contents of context.txt and restart the app.
 
 ## Files
