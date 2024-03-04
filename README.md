@@ -1,6 +1,7 @@
 # NovelAI Simple Console
 
 This is a simple console application that utilizes NovelAI's API to generate text based on user input.
+It utilizes a very rudimentary context manager that simply saves the input and output, which is used to get a more consistent response from the API.
 
 ## Setup
 
