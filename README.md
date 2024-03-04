@@ -1,6 +1,6 @@
 # NovelAI Simple Console
 
-This is a simple console application that utilizes NovelAI's API to generate text based on user input.
+This is a simple console application that utilizes NovelAI's API to generate text, based on user input.
 It utilizes a very rudimentary context manager that simply saves the input and output, which is used to get a more consistent response from the API.
 
 ![image](https://github.com/StormTersteeg/novelai_simple_console/assets/42808385/c4c0901a-ca38-47ef-942e-0824ee8a162b)
@@ -36,6 +36,7 @@ use_persistent_context = True
 
 Run the app.py script. The console will prompt for input. Enter your prompt and press Enter. The application will generate text based on the prompt using NovelAI's API and display the output.
 Change the context_base.txt to your liking, this file is used to give the beginning of your next story a starting point. Using the context_base.txt will massively improve the quality of the generated output.
+If you want to completely reset the direction of your last generated story, simply erase the contents of context.txt and restart the app.
 
 ### Files
 - app.py: Main application script
